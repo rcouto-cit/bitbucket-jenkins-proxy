@@ -1,0 +1,29 @@
+{
+  "name": "bitbucket-jenkins-proxy",
+  "version": "1.0.0",
+  "description": "The only goal of this package is create endpoint that could be callled by a BitBucket webhook and call specific build on Jenkins",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcouto-cit/bitbucket-jenkins-proxy.git"
+  },
+  "keywords": [
+    "node",
+    "bitbucket",
+    "jenkins"
+  ],
+  "author": "digao.ramos@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcouto-cit/bitbucket-jenkins-proxy/issues"
+  },
+  "homepage": "https://github.com/rcouto-cit/bitbucket-jenkins-proxy#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
+  }
+}
