@@ -4,7 +4,8 @@
   "description": "The only goal of this package is create endpoint that could be callled by a BitBucket webhook and call specific build on Jenkins",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
