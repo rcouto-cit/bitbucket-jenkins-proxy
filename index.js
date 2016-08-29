@@ -1,3 +1,4 @@
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var config = require('./config');
@@ -33,14 +34,18 @@ var callJob = function(jobName, branchName, bitbucket_response){
 	var headers = {
 		'User-Agent': 'Super Agent/0.0.1',
 		'Content-Type': 'application/x-www-form-urlencoded'
-	}
+	};
 
 	var options = {
-		url: config.jenkins.url + '/job/' + jobName + '/buildWithParameters',
+		url: `${config.jenkins.url}/buildByToken/buildWithParameters`,
 		method: 'POST',
 		headers: headers,
-		qs: {'BRANCH': branchName, 'token': config.jenkins.token}
-	}
+		qs: {
+			'job': jobName,
+			'BRANCH': branchName,
+			'token': config.jenkins.token
+		}
+	};
 
 	request(options, function(error, response, body) {
 		console.log(body);
@@ -48,6 +53,3 @@ var callJob = function(jobName, branchName, bitbucket_response){
 		bitbucket_response.send(body);
 	});
 };
-
-
-
